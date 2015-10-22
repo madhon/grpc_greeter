@@ -1,0 +1,6 @@
+source https://www.nuget.org/api/v2/
+
+nuget Google.Protobuf 3.0.0-alpha4 framework: >= net45
+nuget Grpc 0.7.1 framework: >= net45
+nuget Grpc.Tools 0.7.1 framework: >= net45
+nuget Microsoft.Bcl.Immutable 1.0.34 framework: >= net45
