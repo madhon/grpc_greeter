@@ -67,7 +67,7 @@
   -->
   <Import Project="..\.paket\paket.targets" />
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <ItemGroup>
         <Reference Include="Google.Protobuf">
           <HintPath>..\packages\Google.Protobuf\lib\portable-net45+netcore45+wpa81+wp8\Google.Protobuf.dll</HintPath>
@@ -78,7 +78,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <ItemGroup>
         <Reference Include="Grpc.Core">
           <HintPath>..\packages\Grpc.Core\lib\net45\Grpc.Core.dll</HintPath>
@@ -89,37 +89,28 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <PropertyGroup>
-        <__paket__grpc_dependencies_openssl_redist_props>portable-net45\grpc.dependencies.openssl.redist</__paket__grpc_dependencies_openssl_redist_props>
-        <__paket__grpc_dependencies_openssl_redist_targets>portable-net45\grpc.dependencies.openssl.redist</__paket__grpc_dependencies_openssl_redist_targets>
+        <__paket__grpc_dependencies_openssl_redist_targets>portable-net45+netcore45+wpa81+wp8\grpc.dependencies.openssl.redist</__paket__grpc_dependencies_openssl_redist_targets>
       </PropertyGroup>
     </When>
   </Choose>
-  <Import Project="..\packages\grpc.dependencies.openssl.redist\build\$(__paket__grpc_dependencies_openssl_redist_props).props" Condition="Exists('..\packages\grpc.dependencies.openssl.redist\build\$(__paket__grpc_dependencies_openssl_redist_props).props')" Label="Paket" />
-  <Import Project="..\packages\grpc.dependencies.openssl.redist\build\$(__paket__grpc_dependencies_openssl_redist_targets).targets" Condition="Exists('..\packages\grpc.dependencies.openssl.redist\build\$(__paket__grpc_dependencies_openssl_redist_targets).targets')" Label="Paket" />
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <PropertyGroup>
-        <__paket__grpc_dependencies_zlib_redist_props>portable-net45\grpc.dependencies.zlib.redist</__paket__grpc_dependencies_zlib_redist_props>
-        <__paket__grpc_dependencies_zlib_redist_targets>portable-net45\grpc.dependencies.zlib.redist</__paket__grpc_dependencies_zlib_redist_targets>
+        <__paket__grpc_dependencies_zlib_redist_targets>portable-net45+netcore45+wpa81+wp8\grpc.dependencies.zlib.redist</__paket__grpc_dependencies_zlib_redist_targets>
       </PropertyGroup>
     </When>
   </Choose>
-  <Import Project="..\packages\grpc.dependencies.zlib.redist\build\$(__paket__grpc_dependencies_zlib_redist_props).props" Condition="Exists('..\packages\grpc.dependencies.zlib.redist\build\$(__paket__grpc_dependencies_zlib_redist_props).props')" Label="Paket" />
-  <Import Project="..\packages\grpc.dependencies.zlib.redist\build\$(__paket__grpc_dependencies_zlib_redist_targets).targets" Condition="Exists('..\packages\grpc.dependencies.zlib.redist\build\$(__paket__grpc_dependencies_zlib_redist_targets).targets')" Label="Paket" />
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <PropertyGroup>
-        <__paket__grpc_native_csharp_ext_props>portable-net45\grpc.native.csharp_ext</__paket__grpc_native_csharp_ext_props>
-        <__paket__grpc_native_csharp_ext_targets>portable-net45\grpc.native.csharp_ext</__paket__grpc_native_csharp_ext_targets>
+        <__paket__grpc_native_csharp_targets>portable-net45+netcore45+wpa81+wp8\grpc.native.csharp</__paket__grpc_native_csharp_targets>
       </PropertyGroup>
     </When>
   </Choose>
-  <Import Project="..\packages\grpc.native.csharp_ext\build\$(__paket__grpc_native_csharp_ext_props).props" Condition="Exists('..\packages\grpc.native.csharp_ext\build\$(__paket__grpc_native_csharp_ext_props).props')" Label="Paket" />
-  <Import Project="..\packages\grpc.native.csharp_ext\build\$(__paket__grpc_native_csharp_ext_targets).targets" Condition="Exists('..\packages\grpc.native.csharp_ext\build\$(__paket__grpc_native_csharp_ext_targets).targets')" Label="Paket" />
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <ItemGroup>
         <Reference Include="System.Interactive.Async">
           <HintPath>..\packages\Ix-Async\lib\net45\System.Interactive.Async.dll</HintPath>
@@ -130,14 +121,17 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <ItemGroup>
         <Reference Include="System.Collections.Immutable">
-          <HintPath>..\packages\Microsoft.Bcl.Immutable\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+          <HintPath>..\packages\System.Collections.Immutable\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
       </ItemGroup>
     </When>
   </Choose>
+  <Import Project="..\packages\grpc.dependencies.openssl.redist\build\$(__paket__grpc_dependencies_openssl_redist_targets).targets" Condition="Exists('..\packages\grpc.dependencies.openssl.redist\build\$(__paket__grpc_dependencies_openssl_redist_targets).targets')" Label="Paket" />
+  <Import Project="..\packages\grpc.dependencies.zlib.redist\build\$(__paket__grpc_dependencies_zlib_redist_targets).targets" Condition="Exists('..\packages\grpc.dependencies.zlib.redist\build\$(__paket__grpc_dependencies_zlib_redist_targets).targets')" Label="Paket" />
+  <Import Project="..\packages\grpc.native.csharp\build\$(__paket__grpc_native_csharp_targets).targets" Condition="Exists('..\packages\grpc.native.csharp\build\$(__paket__grpc_native_csharp_targets).targets')" Label="Paket" />
 </Project>

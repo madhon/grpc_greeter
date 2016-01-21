@@ -9,41 +9,46 @@ using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
 namespace Greeter {
 
+  /// <summary>Holder for reflection information generated from helloworld.proto</summary>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public static partial class Helloworld {
+  public static partial class HelloworldReflection {
 
     #region Descriptor
+    /// <summary>File descriptor for helloworld.proto</summary>
     public static pbr::FileDescriptor Descriptor {
       get { return descriptor; }
     }
     private static pbr::FileDescriptor descriptor;
 
-    static Helloworld() {
+    static HelloworldReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBoZWxsb3dvcmxkLnByb3RvEgdHcmVldGVyIhwKDEhlbGxvUmVxdWVzdBIM", 
-            "CgRuYW1lGAEgASgJIh0KCkhlbGxvUmVwbHkSDwoHbWVzc2FnZRgBIAEoCTJD", 
-            "CgdHcmVldGVyEjgKCFNheUhlbGxvEhUuR3JlZXRlci5IZWxsb1JlcXVlc3Qa", 
-            "Ey5HcmVldGVyLkhlbGxvUmVwbHkiAEIYChBpby5ncnBjLmV4YW1wbGVzogID", 
+            "ChBoZWxsb3dvcmxkLnByb3RvEgdHcmVldGVyIhwKDEhlbGxvUmVxdWVzdBIM",
+            "CgRuYW1lGAEgASgJIh0KCkhlbGxvUmVwbHkSDwoHbWVzc2FnZRgBIAEoCTJD",
+            "CgdHcmVldGVyEjgKCFNheUhlbGxvEhUuR3JlZXRlci5IZWxsb1JlcXVlc3Qa",
+            "Ey5HcmVldGVyLkhlbGxvUmVwbHkiAEIYChBpby5ncnBjLmV4YW1wbGVzogID",
             "SExXYgZwcm90bzM="));
-      descriptor = pbr::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
-            new pbr::GeneratedCodeInfo(typeof(global::Greeter.HelloRequest), new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedCodeInfo(typeof(global::Greeter.HelloReply), new[]{ "Message" }, null, null, null)
+            new pbr::GeneratedCodeInfo(typeof(global::Greeter.HelloRequest), global::Greeter.HelloRequest.Parser, new[]{ "Name" }, null, null, null),
+            new pbr::GeneratedCodeInfo(typeof(global::Greeter.HelloReply), global::Greeter.HelloReply.Parser, new[]{ "Message" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
+  /// <summary>
+  ///  The request message containing the user's name.
+  /// </summary>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class HelloRequest : pb::IMessage<HelloRequest> {
     private static readonly pb::MessageParser<HelloRequest> _parser = new pb::MessageParser<HelloRequest>(() => new HelloRequest());
     public static pb::MessageParser<HelloRequest> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Greeter.Helloworld.Descriptor.MessageTypes[0]; }
+      get { return global::Greeter.HelloworldReflection.Descriptor.MessageTypes[0]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -64,6 +69,7 @@ namespace Greeter {
       return new HelloRequest(this);
     }
 
+    /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
     public string Name {
@@ -95,7 +101,7 @@ namespace Greeter {
     }
 
     public override string ToString() {
-      return pb::JsonFormatter.Default.Format(this);
+      return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     public void WriteTo(pb::CodedOutputStream output) {
@@ -139,13 +145,16 @@ namespace Greeter {
 
   }
 
+  /// <summary>
+  ///  The response message containing the greetings
+  /// </summary>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class HelloReply : pb::IMessage<HelloReply> {
     private static readonly pb::MessageParser<HelloReply> _parser = new pb::MessageParser<HelloReply>(() => new HelloReply());
     public static pb::MessageParser<HelloReply> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Greeter.Helloworld.Descriptor.MessageTypes[1]; }
+      get { return global::Greeter.HelloworldReflection.Descriptor.MessageTypes[1]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -166,6 +175,7 @@ namespace Greeter {
       return new HelloReply(this);
     }
 
+    /// <summary>Field number for the "message" field.</summary>
     public const int MessageFieldNumber = 1;
     private string message_ = "";
     public string Message {
@@ -197,7 +207,7 @@ namespace Greeter {
     }
 
     public override string ToString() {
-      return pb::JsonFormatter.Default.Format(this);
+      return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     public void WriteTo(pb::CodedOutputStream output) {

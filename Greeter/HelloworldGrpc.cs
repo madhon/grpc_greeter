@@ -25,7 +25,7 @@ namespace Greeter {
     // service descriptor
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Greeter.Helloworld.Descriptor.Services[0]; }
+      get { return global::Greeter.HelloworldReflection.Descriptor.Services[0]; }
     }
 
     // client interface
