@@ -1,15 +1,15 @@
 ﻿namespace GreeterServer
 {
-  using System.Threading.Tasks;
-  using Greeter;
-  using Grpc.Core;
+    using System;
+    using System.Threading.Tasks;
+    using Greeter;
+    using Grpc.Core;
 
-  public class GreeterImpl : Greeter.IGreeter
-  {
-    // Server side handler of the SayHello RPC
-    public Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
+    public class GreeterImpl : Greeter.GreeterBase
     {
-      return Task.FromResult(new HelloReply { Message = "Hello " + request.Name });
+        public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
+        {
+            return Task.FromResult(new HelloReply { Message = "Hello " + request.Name });
+        }
     }
-  }
 }

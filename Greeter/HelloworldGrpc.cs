@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using Grpc.Core;
 
 namespace Greeter {
+  /// <summary>
+  ///  The greeting service definition.
+  /// </summary>
   public static class Greeter
   {
     static readonly string __ServiceName = "Greeter.Greeter";
@@ -22,66 +25,133 @@ namespace Greeter {
         __Marshaller_HelloRequest,
         __Marshaller_HelloReply);
 
-    // service descriptor
+    /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
       get { return global::Greeter.HelloworldReflection.Descriptor.Services[0]; }
     }
 
-    // client interface
+    /// <summary>Client for Greeter</summary>
+    [System.Obsolete("Client side interfaced will be removed in the next release. Use client class directly.")]
     public interface IGreeterClient
     {
+      /// <summary>
+      ///  Sends a greeting
+      /// </summary>
       global::Greeter.HelloReply SayHello(global::Greeter.HelloRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken));
+      /// <summary>
+      ///  Sends a greeting
+      /// </summary>
       global::Greeter.HelloReply SayHello(global::Greeter.HelloRequest request, CallOptions options);
+      /// <summary>
+      ///  Sends a greeting
+      /// </summary>
       AsyncUnaryCall<global::Greeter.HelloReply> SayHelloAsync(global::Greeter.HelloRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken));
+      /// <summary>
+      ///  Sends a greeting
+      /// </summary>
       AsyncUnaryCall<global::Greeter.HelloReply> SayHelloAsync(global::Greeter.HelloRequest request, CallOptions options);
     }
 
-    // server-side interface
+    /// <summary>Interface of server-side implementations of Greeter</summary>
+    [System.Obsolete("Service implementations should inherit from the generated abstract base class instead.")]
     public interface IGreeter
     {
-      Task<global::Greeter.HelloReply> SayHello(global::Greeter.HelloRequest request, ServerCallContext context);
+      /// <summary>
+      ///  Sends a greeting
+      /// </summary>
+      global::System.Threading.Tasks.Task<global::Greeter.HelloReply> SayHello(global::Greeter.HelloRequest request, ServerCallContext context);
     }
 
-    // client stub
-    public class GreeterClient : ClientBase, IGreeterClient
+    /// <summary>Base class for server-side implementations of Greeter</summary>
+    public abstract class GreeterBase
+    {
+      /// <summary>
+      ///  Sends a greeting
+      /// </summary>
+      public virtual global::System.Threading.Tasks.Task<global::Greeter.HelloReply> SayHello(global::Greeter.HelloRequest request, ServerCallContext context)
+      {
+        throw new RpcException(new Status(StatusCode.Unimplemented, ""));
+      }
+
+    }
+
+    /// <summary>Client for Greeter</summary>
+    #pragma warning disable 0618
+    public class GreeterClient : ClientBase<GreeterClient>, IGreeterClient
+    #pragma warning restore 0618
     {
       public GreeterClient(Channel channel) : base(channel)
       {
       }
-      public global::Greeter.HelloReply SayHello(global::Greeter.HelloRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public GreeterClient(CallInvoker callInvoker) : base(callInvoker)
       {
-        var call = CreateCall(__Method_SayHello, new CallOptions(headers, deadline, cancellationToken));
-        return Calls.BlockingUnaryCall(call, request);
       }
-      public global::Greeter.HelloReply SayHello(global::Greeter.HelloRequest request, CallOptions options)
+      ///<summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      protected GreeterClient() : base()
       {
-        var call = CreateCall(__Method_SayHello, options);
-        return Calls.BlockingUnaryCall(call, request);
       }
-      public AsyncUnaryCall<global::Greeter.HelloReply> SayHelloAsync(global::Greeter.HelloRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      ///<summary>Protected constructor to allow creation of configured clients.</summary>
+      protected GreeterClient(ClientBaseConfiguration configuration) : base(configuration)
       {
-        var call = CreateCall(__Method_SayHello, new CallOptions(headers, deadline, cancellationToken));
-        return Calls.AsyncUnaryCall(call, request);
       }
-      public AsyncUnaryCall<global::Greeter.HelloReply> SayHelloAsync(global::Greeter.HelloRequest request, CallOptions options)
+
+      /// <summary>
+      ///  Sends a greeting
+      /// </summary>
+      public virtual global::Greeter.HelloReply SayHello(global::Greeter.HelloRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        var call = CreateCall(__Method_SayHello, options);
-        return Calls.AsyncUnaryCall(call, request);
+        return SayHello(request, new CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      ///  Sends a greeting
+      /// </summary>
+      public virtual global::Greeter.HelloReply SayHello(global::Greeter.HelloRequest request, CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SayHello, null, options, request);
+      }
+      /// <summary>
+      ///  Sends a greeting
+      /// </summary>
+      public virtual AsyncUnaryCall<global::Greeter.HelloReply> SayHelloAsync(global::Greeter.HelloRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      {
+        return SayHelloAsync(request, new CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      ///  Sends a greeting
+      /// </summary>
+      public virtual AsyncUnaryCall<global::Greeter.HelloReply> SayHelloAsync(global::Greeter.HelloRequest request, CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SayHello, null, options, request);
+      }
+      protected override GreeterClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new GreeterClient(configuration);
       }
     }
 
-    // creates service definition that can be registered with a server
+    /// <summary>Creates a new client for Greeter</summary>
+    public static GreeterClient NewClient(Channel channel)
+    {
+      return new GreeterClient(channel);
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    #pragma warning disable 0618
     public static ServerServiceDefinition BindService(IGreeter serviceImpl)
+    #pragma warning restore 0618
     {
       return ServerServiceDefinition.CreateBuilder(__ServiceName)
           .AddMethod(__Method_SayHello, serviceImpl.SayHello).Build();
     }
 
-    // creates a new client
-    public static GreeterClient NewClient(Channel channel)
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    #pragma warning disable 0618
+    public static ServerServiceDefinition BindService(GreeterBase serviceImpl)
+    #pragma warning restore 0618
     {
-      return new GreeterClient(channel);
+      return ServerServiceDefinition.CreateBuilder(__ServiceName)
+          .AddMethod(__Method_SayHello, serviceImpl.SayHello).Build();
     }
 
   }
