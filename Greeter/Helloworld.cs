@@ -30,9 +30,9 @@ namespace Greeter {
             "SExXYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
-            new pbr::GeneratedCodeInfo(typeof(global::Greeter.HelloRequest), global::Greeter.HelloRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedCodeInfo(typeof(global::Greeter.HelloReply), global::Greeter.HelloReply.Parser, new[]{ "Message" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Greeter.HelloRequest), global::Greeter.HelloRequest.Parser, new[]{ "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Greeter.HelloReply), global::Greeter.HelloReply.Parser, new[]{ "Message" }, null, null, null)
           }));
     }
     #endregion
@@ -75,7 +75,7 @@ namespace Greeter {
     public string Name {
       get { return name_; }
       set {
-        name_ = pb::Preconditions.CheckNotNull(value, "value");
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -181,7 +181,7 @@ namespace Greeter {
     public string Message {
       get { return message_; }
       set {
-        message_ = pb::Preconditions.CheckNotNull(value, "value");
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
