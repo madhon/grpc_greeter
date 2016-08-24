@@ -1,11 +1,10 @@
 FRAMEWORK: NET45
 NUGET
   remote: https://www.nuget.org/api/v2
-    Google.Protobuf (3.0.0-beta4)
-    Grpc (0.15)
-      Grpc.Core (>= 0.15)
-    Grpc.Core (0.15)
-      Ix-Async (>= 1.2.5)
-    Grpc.Tools (0.15)
-    Ix-Async (1.2.5)
-    System.Collections.Immutable (1.1.37)
+    Google.Protobuf (3.0)
+    Grpc (1.0)
+      Grpc.Core (>= 1.0)
+    Grpc.Core (1.0)
+      System.Interactive.Async (>= 3.0)
+    Grpc.Tools (1.0)
+    System.Interactive.Async (3.0)

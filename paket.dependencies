@@ -1,7 +1,6 @@
 source https://www.nuget.org/api/v2/
 framework:  net45
 
-nuget Google.Protobuf 3.0.0-beta4
+nuget Google.Protobuf 3.0.0
 nuget Grpc 
 nuget Grpc.Tools
-nuget System.Collections.Immutable 1.1.37

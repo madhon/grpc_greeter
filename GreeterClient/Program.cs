@@ -18,6 +18,8 @@
             Console.WriteLine("Greeting: {0}", reply.Message);
 
             channel.ShutdownAsync().Wait();
+
+            Console.ReadLine();
         }
     }
 }
