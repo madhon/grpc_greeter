@@ -1,6 +1,6 @@
 source https://www.nuget.org/api/v2/
 framework:  net45
 
-nuget Google.Protobuf 3.0.0
+nuget Google.Protobuf
 nuget Grpc 
 nuget Grpc.Tools
