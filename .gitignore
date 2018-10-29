@@ -209,6 +209,8 @@ FakesAssemblies/
 # Paket Package Manager Main exe
 .paket/paket.exe
 
+paket-files
+
 # =========================
 # Windows detritus
 # =========================
