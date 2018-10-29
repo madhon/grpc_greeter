@@ -1,10 +1,10 @@
 RESTRICTION: == net45
 NUGET
   remote: https://www.nuget.org/api/v2
-    Google.Protobuf (3.5.1)
-    Grpc (1.11)
-      Grpc.Core (>= 1.11)
-    Grpc.Core (1.11)
+    Google.Protobuf (3.6.1)
+    Grpc (1.16)
+      Grpc.Core (>= 1.16)
+    Grpc.Core (1.16)
       System.Interactive.Async (>= 3.1.1)
-    Grpc.Tools (1.11)
-    System.Interactive.Async (3.1.1)
+    Grpc.Tools (1.16)
+    System.Interactive.Async (3.2)
